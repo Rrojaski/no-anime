@@ -2,7 +2,7 @@
 
 a {
   float: left;
-
+  white-space: nowrap;
   display: inline-block;
   @include reset-anchor;
 }

@@ -1,8 +1,10 @@
 @import "../../variables.scss";
 
 .Header {
+  white-space: nowrap;
   display: flex;
   width: 100%;
   padding: 0 2rem;
+  margin-bottom: 5rem;
   @include clear-fix;
 }

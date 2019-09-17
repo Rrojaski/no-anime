@@ -38,10 +38,10 @@ html {
     overflow: hidden;
   }
   @include respond(tab-land) {
-    font-size: 70%;
+    font-size: 60%;
   }
   @include respond(tab-port) {
-    font-size: 60%;
+    font-size: 50%;
   }
   @include respond(phone) {
     font-size: 50%;

@@ -29,7 +29,11 @@ const Icon = props => {
   });
   return (
     <Fragment>
-      <span className={`${styles.Icon} ${styles[props.className]} `}>
+      <span
+        className={`${styles.Icon} ${styles[props.className]} ${
+          styles[props.type]
+        }`}
+      >
         {props.children}
       </span>
     </Fragment>

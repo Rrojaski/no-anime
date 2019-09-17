@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 
 import styles from "./Nav.module.scss";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Nav = props => {
   useEffect(() => {
@@ -33,19 +33,19 @@ const Nav = props => {
     <Fragment>
       <ul className={`${styles.Nav} ${styles[props.className]} `}>
         <li className={`${styles.nav__item}`}>
-          <Link to="/explore">
+          <NavLink to="/explore" activeClassName={styles.selected}>
             <p>explore</p>
-          </Link>
+          </NavLink>
         </li>
         <li className={`${styles.nav__item}`}>
-          <Link to="/movies">
+          <NavLink to="/movies" activeClassName={styles.selected}>
             <p>movies</p>
-          </Link>
+          </NavLink>
         </li>
         <li className={`${styles.nav__item}`}>
-          <Link to="/recent">
+          <NavLink to="/recent" activeClassName={styles.selected}>
             <p>recentrly added</p>
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </Fragment>

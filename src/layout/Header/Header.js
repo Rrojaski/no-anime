@@ -18,10 +18,10 @@ function App() {
           <Nav />
         </Col>
         <Col className="u-align-middle" size="col-1-of-2">
-          <Icon>
+          <Icon type="person">
             <i class="material-icons">person</i>
           </Icon>
-          <Icon>
+          <Icon type="message">
             <i class="material-icons">message</i>
           </Icon>
           <Search />

@@ -1,10 +1,14 @@
 @import "../../variables.scss";
 
 .Nav {
+  white-space: nowrap;
   margin: auto 0;
   float: left;
   display: inline-block;
   @include reset-list;
+  @include respond(tab-port) {
+    display: none;
+  }
 }
 
 .nav__item {
@@ -41,4 +45,8 @@ li .ripple {
     transform: scale(2.5);
     opacity: 0;
   }
+}
+
+.selected {
+  background: $color-tertiary;
 }

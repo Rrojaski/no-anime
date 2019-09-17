@@ -52,23 +52,3 @@
     3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + 2 * #{$gutter-horizontal}
   );
 }
-
-// Screen resize
-@include respond(tab-port) {
-  .col-1-of-2 {
-    width: 100%;
-    &:not(:last-child) {
-      margin-bottom: 10rem;
-    }
-  }
-}
-
-// Mod for tablet and bellow view
-@include respond(tab-port) {
-  .header__item__left {
-    display: none;
-  }
-  .header__item__right {
-    width: 100%;
-  }
-}
