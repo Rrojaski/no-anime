@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.Search {
+  width: 100%;
+}
+.search__form {
+  position: relative;
+}
+.search__input {
+}
+.input__text {
+  display: block;
+  width: 100%;
+  background-color: $color-tertiary;
+  border: none;
+  border-radius: 2px;
+  padding: 1rem 1rem;
+  color: $white;
+}
+
+.search__button {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  position: absolute;
+  @include reset-button;
+}

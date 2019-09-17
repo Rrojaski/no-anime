@@ -1,0 +1,50 @@
+@import "./variables.scss";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input:focus,
+button:focus,
+a:focus {
+  outline: 1px solid $color-secondary;
+}
+
+html {
+  background-color: $color-primary;
+  color: $white;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(desk-big) {
+    font-size: 80%;
+    overflow: hidden;
+  }
+  @include respond(tab-land) {
+    font-size: 70%;
+  }
+  @include respond(tab-port) {
+    font-size: 60%;
+  }
+  @include respond(phone) {
+    font-size: 50%;
+  }
+}
