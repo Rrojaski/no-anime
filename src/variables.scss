@@ -8,7 +8,8 @@ $purple: rgb(65, 0, 153);
 
 $color-primary: #0f0f0f;
 $color-secondary: #e50913;
-$color-tertiary: #242a2d;
+$color-tertiary: #1e1e1e;
+$color-fourth: #424242;
 
 $color-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
 
@@ -50,6 +51,11 @@ $gutter-vertical: 3rem;
 
 @mixin reset-list {
   list-style-type: none;
+}
+
+@mixin relative-middle {
+  position: relative;
+  margin: auto 0;
 }
 
 @mixin absolute-center {
@@ -94,6 +100,9 @@ $gutter-vertical: 3rem;
 
 // Utiliy classes
 
+.u-align-middle {
+  @include relative-middle;
+}
 .u-align-center {
   @include absolute-center;
 }

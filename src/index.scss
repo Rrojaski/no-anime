@@ -9,9 +9,8 @@
 }
 
 input:focus,
-button:focus,
-a:focus {
-  outline: 1px solid $color-secondary;
+button:focus {
+  outline: 0.5px solid $color-secondary;
 }
 
 html {

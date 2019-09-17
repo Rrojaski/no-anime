@@ -11,9 +11,12 @@ const Search = props => {
             id="search"
             name="search"
             type="text"
+            placeholder="Search anime..."
             className={`${styles.search__input} ${styles.input__text}`}
           />
-          <button className={`${styles.search__button}`}>Search</button>
+          <button className={`${styles.search__button}`}>
+            <i class="material-icons">search</i>
+          </button>
         </form>
       </div>
     </Fragment>

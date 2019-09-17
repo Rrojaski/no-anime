@@ -1,6 +1,8 @@
 @import "../../variables.scss";
 
 .Header {
+  display: flex;
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: 0 2rem;
+  @include clear-fix;
 }

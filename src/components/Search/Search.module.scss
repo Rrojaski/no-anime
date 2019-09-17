@@ -1,7 +1,12 @@
 @import "../../variables.scss";
 
 .Search {
-  width: 100%;
+  float: right;
+  display: inline-block;
+  margin: auto 0;
+  margin-right: 1rem;
+  height: 100%;
+  width: 80%;
 }
 .search__form {
   position: relative;
@@ -9,13 +14,19 @@
 .search__input {
 }
 .input__text {
-  display: block;
+  display: inline-block;
   width: 100%;
-  background-color: $color-tertiary;
+  height: 100%;
+  background-color: $color-fourth;
   border: none;
   border-radius: 2px;
   padding: 1rem 1rem;
   color: $white;
+
+  &::placeholder {
+    color: lighten($color-fourth, 60%);
+    font-size: $font-md;
+  }
 }
 
 .search__button {
