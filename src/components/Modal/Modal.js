@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import styles from "./Modal.module.scss";
 import "../../variables.scss";
@@ -10,6 +11,7 @@ const Modal = props => {
     const overlay = document.getElementById("overlay");
     const modal = document.getElementById("modal");
     const cancel = document.getElementById("cancel");
+    const register = document.getElementById("register");
     const close = () => {
       modal.setAttribute(
         "style",
@@ -25,6 +27,7 @@ const Modal = props => {
     };
     overlay.addEventListener("click", close);
     cancel.addEventListener("click", close);
+    register.addEventListener("click", close);
   });
   return (
     <Fragment>
@@ -36,20 +39,51 @@ const Modal = props => {
           <div>
             <Paragraph size="lg">Login</Paragraph>
           </div>
-          <div>
-            <input type="email" className={`${styles.modal__email}`} required />
+
+          <div className={`${styles.email__box}`}>
+            <label for="email" className={`${styles.email__label}`}>
+              E-mail
+            </label>
             <input
+              name="email"
+              id="email"
+              type="email"
+              className={`${styles.modal__email}`}
+              required
+            />
+          </div>
+          <div className={`${styles.password__box}`}>
+            <label for="password" className={`${styles.password__label}`}>
+              Password
+            </label>
+
+            <input
+              name="password"
+              id="passowrd"
+              type="password"
               type="text"
               className={`${styles.modal__password}`}
               required
             />
           </div>
+
           <div className={`${styles.modal__text}`}>
             <Paragraph>
               You may also login using your AnimeUltima account.
             </Paragraph>
             <Paragraph>
-              Don't have an account yet? <a href="#">Register now!</a>
+              Don't have an account yet?
+              <p
+                id="register"
+                style={{
+                  lineHeight: "inherit",
+                  fontWeight: "inherit",
+                  fontSize: "inherit",
+                  display: "inline-block"
+                }}
+              >
+                <Link to="/register"> Register now!</Link>
+              </p>
             </Paragraph>
           </div>
           <div>
