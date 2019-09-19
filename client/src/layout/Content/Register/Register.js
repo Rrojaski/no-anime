@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, userEffect } from "react";
 
 import styles from "./Register.module.scss";
 
@@ -7,6 +7,10 @@ import { Row, Col } from "../../../components/Grid/Grid";
 import Paragraph from "../../../components/Paragraph/Paragraph";
 
 const Register = () => {
+  const onChange = () => {};
+  userEffect(() => {
+    onChange();
+  });
   return (
     <Fragment>
       <div className={`${styles.Register}`}>
@@ -18,11 +22,13 @@ const Register = () => {
         <Row>
           <Col>
             <form
-              action="alert('register account')"
+              action="http://localhost:5000/api/users"
+              method="post"
               className={`${styles.register__form}`}
             >
               <label for="email">E-Mail Address</label>
               <input
+                onChange={e => onChange(e)}
                 name="email"
                 id="email"
                 type="email"
