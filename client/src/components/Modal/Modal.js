@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Modal.module.scss";
@@ -7,6 +7,36 @@ import "../../variables.scss";
 import Paragraph from "../Paragraph/Paragraph";
 
 const Modal = props => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+  const { email, password } = formData;
+  const onChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const onSubmit = e => {
+    e.preventDefault();
+    close();
+    alert("Thank you for logging in!");
+    alert(Object.entries(formData));
+  };
+  const overlay = document.getElementById("overlay");
+  const modal = document.getElementById("modal");
+
+  const close = () => {
+    modal.setAttribute(
+      "style",
+      "display:block; opacity: 0; transform: translate(-50%, -50%) scale(0.8)"
+    );
+    setTimeout(() => {
+      modal.setAttribute(
+        "style",
+        "display:none; opacity: 0; transform: translate(-50%, -50%) scale(0.8)"
+      );
+    }, 500);
+    overlay.setAttribute("style", "display: none");
+  };
   useEffect(() => {
     const overlay = document.getElementById("overlay");
     const modal = document.getElementById("modal");
@@ -35,7 +65,11 @@ const Modal = props => {
         className={`${styles.Modal} ${styles[props.className]}`}
         id={props.id}
       >
-        <form action="#" className={`${styles.modal__form}`}>
+        <form
+          action="#"
+          className={`${styles.modal__form}`}
+          onSubmit={e => onSubmit(e)}
+        >
           <div>
             <Paragraph size="lg">Login</Paragraph>
           </div>
@@ -45,6 +79,7 @@ const Modal = props => {
               E-mail
             </label>
             <input
+              onChange={e => onChange(e)}
               name="email"
               id="email"
               type="email"
@@ -58,6 +93,7 @@ const Modal = props => {
             </label>
 
             <input
+              onChange={e => onChange(e)}
               name="password"
               id="passowrd"
               type="password"

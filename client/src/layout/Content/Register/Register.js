@@ -1,4 +1,4 @@
-import React, { Fragment, userEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import styles from "./Register.module.scss";
 
@@ -8,7 +8,7 @@ import Paragraph from "../../../components/Paragraph/Paragraph";
 
 const Register = () => {
   const onChange = () => {};
-  userEffect(() => {
+  useEffect(() => {
     onChange();
   });
   return (
