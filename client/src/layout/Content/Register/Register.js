@@ -26,41 +26,63 @@ const Register = () => {
               method="post"
               className={`${styles.register__form}`}
             >
-              <label for="email">E-Mail Address</label>
-              <input
-                onChange={e => onChange(e)}
-                name="email"
-                id="email"
-                type="email"
-                className={`${styles.register__email}`}
-                required
-              />
-              <label for="user">Username</label>
-              <input
-                id="user"
-                name="user"
-                type="text"
-                className={`${styles.register__user}`}
-                required
-              />
-              <label for="pass">Password</label>
-              <input
-                id="pass"
-                name="pass"
-                type="text"
-                className={`${styles.register__password}`}
-                required
-              />
-              <label for="pass2">Repeat Password</label>
-              <input
-                id="pass2"
-                name="pass2"
-                type="text"
-                className={`${styles.register__password}`}
-                required
-              />
+              <div className={`${styles.register__group}`}>
+                <input
+                  onChange={e => onChange(e)}
+                  name="email1"
+                  id="email1"
+                  type="email"
+                  placeholder=" "
+                  className={`${styles.register__email}`}
+                  required
+                />
+                <label className={`${styles.register__label}`} for="email1">
+                  E-Mail Address
+                </label>
+              </div>
+              <div className={`${styles.register__group}`}>
+                <input
+                  id="user"
+                  name="user"
+                  type="text"
+                  placeholder=" "
+                  className={`${styles.register__user}`}
+                  required
+                />
+                <label className={`${styles.register__label}`} for="user">
+                  Username
+                </label>
+              </div>
+              <div className={`${styles.register__group}`}>
+                <input
+                  placeholder=" "
+                  id="pass"
+                  name="pass"
+                  type="text"
+                  className={`${styles.register__password}`}
+                  required
+                />
+                <label className={`${styles.register__label}`} for="pass">
+                  Password
+                </label>
+              </div>
+              <div className={`${styles.register__group}`}>
+                <input
+                  placeholder=" "
+                  id="pass2"
+                  name="pass2"
+                  type="text"
+                  className={`${styles.register__password}`}
+                  required
+                />
+                <label className={`${styles.register__label}`} for="pass2">
+                  Repeat Password
+                </label>
+              </div>
               <div>
-                <button>create account</button>
+                <button className={`${styles.register__button}`}>
+                  create account
+                </button>
               </div>
             </form>
           </Col>
